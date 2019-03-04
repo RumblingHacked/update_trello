@@ -1,9 +1,10 @@
 import globals
-import plotly.graph_objs as go
 import plotly
-from plotly.offline import plot
+import plotly.plotly as py
+import plotly.graph_objs as go
+from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 
-plotly.tools.set_credentials_file(username='RumblingHacked', api_key=globals.environ.get('PLOTLY_KEY'))
+plotly.tools.set_credentials_file(username='ModeLucas', api_key=globals.environ.get('PLOTLY_KEY'))
 
 # Variables that we need for the graph
 areacodes_completed = len(globals.list_completed.list_cards())
@@ -17,4 +18,4 @@ colors = ['#EACF19', '#ffffff', '#1D0C23']
 
 trace = go.Pie(labels= labels, values= values, hoverinfo='label+percent', textinfo='value', textfont=dict(size=20), marker=dict(colors=colors, line=dict(color='#000000', width=2)))
 
-plot([trace], filename='area_code_progress.html')
+py.plot([trace], filename='area_code_progress.html')
