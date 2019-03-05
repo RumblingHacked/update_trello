@@ -18,4 +18,4 @@ colors = ['#EACF19', '#ffffff', '#1D0C23']
 
 trace = go.Pie(labels= labels, values= values, hoverinfo='label+percent', textinfo='value', textfont=dict(size=20), marker=dict(colors=colors, line=dict(color='#000000', width=2)))
 
-py.plot([trace], filename='area_code_progress.html')
+py.plot([trace], filename='area_code_progress.html', auto_open=False)
